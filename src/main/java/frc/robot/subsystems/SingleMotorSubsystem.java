@@ -4,21 +4,25 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.MotorConstants;
 
 public class SingleMotorSubsystem extends SubsystemBase {
   /** Creates a new SingleMotor. */
-  private final WPI_TALONSRX motor = new WPI_TalonSRX(MotorConstants.TESTBED_TALONSRX_CAN_ID);
-  public SingleMotorSubsystem() {
-    motor.setNeutralMode(NeutralMode.Brake);
-    stopMotor();
-  }
-
-  public void startMotor(){
-    lastSet = MotorConstants.DEFAULT_MOTOR_SPEED;
-    motor.set(lastSet);
+  private final WPI_TalonSRX motor = new WPI_TalonSRX(MotorConstants.TESTBED_TALONSRX_CAN_ID);
+    private double lastSet;
+    public SingleMotorSubsystem() {
+      motor.setNeutralMode(NeutralMode.Brake);
+      stopMotor();
+    }
+  
+    public void startMotor(){
+      lastSet = MotorConstants.DEFAULT_MOTOR_SPEED;
+      motor.set(lastSet);
   }
 
   public void stopMotor(){

@@ -19,6 +19,6 @@ public final class Constants {
   
   public static final class MotorConstants {
     public static final int TESTBED_TALONSRX_CAN_ID = 20; // Testbed: Front Left TalonSRX
-    public static final int DEFAULT_MOTOR_SPEED = 0.5; // 50% output
+    public static final double DEFAULT_MOTOR_SPEED = 0.5; // 50% output
   }
 }
