@@ -13,7 +13,8 @@ public class StopMotorCommand extends InstantCommand {
   /** Creates a new StartMotorCommand. */
   public StopMotorCommand(SingleMotorSubsystem subsystem) {
     // Use addRequirements() here to declare subsystem dependencies.
-  super(subsystem::stopMotor, subsystem);
+    super(subsystem::stopMotor, subsystem);
+    addRequirements(subsystem);
   }
 
   // Called when the command is initially scheduled.
