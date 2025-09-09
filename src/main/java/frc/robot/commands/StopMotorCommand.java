@@ -9,11 +9,11 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import frc.robot.subsystems.SingleMotorSubsystem;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
-public class StartMotorCommand extends InstantCommand {
+public class StopMotorCommand extends InstantCommand {
   /** Creates a new StartMotorCommand. */
-  public StartMotorCommand(SingleMotorSubsystem subsystem) {
+  public StopMotorCommand(SingleMotorSubsystem subsystem) {
     // Use addRequirements() here to declare subsystem dependencies.
-  super(subsystem::startMotor, subsystem);
+  super(subsystem::stopMotor, subsystem);
   }
 
   // Called when the command is initially scheduled.
